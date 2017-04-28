@@ -1,0 +1,5 @@
+export const MODEL_LOGGED = 'PC_MODEL_AUTH_LOGGED'
+export const MODEL_AUTH_FORM = 'PC_MODEL_AUTH_FORM'
+export const ROUTE_AUTH_LOGIN = '/entrar'
+export const ACTION_AUTH_LOGIN = 'PC_ACTION_AUTH_LOGIN'
+export const ACTION_AUTH_LOGOUT = 'PC_ACTION_AUTH_LOGOUT'

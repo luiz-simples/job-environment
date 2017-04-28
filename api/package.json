@@ -1,0 +1,40 @@
+{
+  "name": "job-api",
+  "version": "1.0.0",
+  "description": "Default environment API",
+  "author": "Luiz Amorim <luiz.simples@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "prestart": "rm -Rf ./dist; webpack --config ./webpack.config.dev.js --watch &",
+    "start": "while [ ! -f ./dist/job.dev.js ]; do sleep 1; done; NODE_ENV=development nodemon ./dist/job.dev.js",
+    "build": "rm -Rf dist/; NODE_ENV=production webpack --optimize-minimize --config webpack.config.prod.js --progress"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^7.0.0",
+    "babel-plugin-istanbul": "^4.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "html-loader": "^0.4.5",
+    "nodemon": "^1.11.0",
+    "q-postgres": "git+https://github.com/nurimba/q-postgres.git#1.1.7",
+    "raw-loader": "^0.5.1",
+    "webpack": "^2.4.1",
+    "webpack-node-externals": "^1.5.4"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "body-parser": "^1.17.1",
+    "colog": "^1.0.4",
+    "compression": "^1.6.2",
+    "connect-multiparty": "^2.0.0",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "handlebars": "^4.0.6",
+    "moment": "^2.18.1",
+    "nd-conf": "git+https://luizsimples@bitbucket.org/aruanda/nd-conf.git"
+  }
+}

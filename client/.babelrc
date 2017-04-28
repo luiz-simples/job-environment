@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "babel-preset-react-app",
+    "stage-0"
+  ],
+
+  "plugins": [
+    "transform-decorators-legacy"
+  ],
+
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
+}

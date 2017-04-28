@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  database:
+    image: job/pg:9.5
+    hostname: database
+    container_name: pc-db
+    environment:
+      - PGDATA=/var/db
+      - POSTGRES_DB=job
+      - POSTGRES_USER=job
+      - POSTGRES_PASSWORD=RE7531PH
+    volumes:
+      - $PWD/.backups:/var/backups
+      - $PWD/.database:/var/db
+
+  dev:
+    image: job
+    hostname: dev
+    build: docker/
+    working_dir: /job/app
+    environment:
+      - NODE_ENV=development
+    links:
+      - database
+    volumes:
+      - $PWD:/job/app
+      - $HOME/.ssh:/job/.ssh
+      - $HOME/.gitconfig:/job/.gitconfig
